@@ -1,44 +1,35 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-int main()
-{
-   int v, n, m = 0;
+int main(){
+        float V;
+        unsigned long N, M;
+        srand((unsigned long)time(NULL));
+        M = rand() % 1000000;
 
+        do{
+                printf("Informe V e N: ");
+                scanf("%f %lu ", &V, &N);
 
-    printf("Digite o valor que deseja apostar\n");
-    scanf("%i", &v);
-    printf("\n Digite o numero que deseja apostar\n");
-    scanf("%i", &n);
-    printf("\n Digite o numero sorteado(adm):");
-    scanf("%i", &m);
+                if(!(V + N + M)) break;
 
-    float p = 0;
+                if(N%10000 == M%1000){
+                        printf("%.2f\n", V * 3000);
+                 }else if(N%1000 == M%1000){
+                        printf("%.2f\n", V * 500);
+                 }else if(N%100 == M%100){
+                        printf("%.2f\n", V * 50);
+                 } else{
+                        unsigned long GA = ((N % 100) - 1) / 4;
+                        unsigned long  GS = ((M % 100) - 1) / 4;
 
-
-    // verificando com 4 numeros no final
-    if(n%10000 == m%10000){
-        p = v * 3000;
-    }else{
-        // verificando com 3 numeros no final
-        if(n%1000 == m%1000){
-            p = v * 500;
-        }else{
-              //verificando com 2 numeros no final
-            if(((n%100 == m%100) && (n%100 - m%100) > 5) || ((n%100 == m%100) && (m%100 - n%100) > 5)
-                    ||((n%100 == m%100) && (n%100 - m%100) == 0)|| ((n%100 == m%100) && (m%100 - n%100) ==0)){
-                    p = v * 50;
-            }else{
-               //verificando com 2 numeros no final e se sao do mesmo grupo
-                if(((n%100 - m%100) < 3 && (n%100 - m%100) > 0  ||(n%100 - m%100) == 3)  || ((m%100 - n%100) < 3) && (n%100 - m%100) > 0 ||(m%100 - n%100) ==3  ){
-                        p = v * 16;
-                        printf("%i",n);
-                        printf("%i",m);
-                }
-            }
-        }
-    }
-
-    printf("resultado %.f", p);
+                        if(GA == GS){
+                             printf("%.2f\n", V * 16);
+                        }else{
+                            printf("0.00");
+                        }
+                 }
+        }while(1);
     return 0;
 }
