@@ -7,7 +7,7 @@ int main(){
         unsigned long N, M;
         srand((unsigned long)time(NULL));
         M = rand() % 1000000;
-
+       
         do{
               printf("Informe V e N: ");
               scanf("%f %lu ", &V, &N);
@@ -21,15 +21,15 @@ int main(){
               }else if(N%100 == M%100){
                      printf("%.2f\n", V * 50);
               } else{
-                 unsigned long GA = ((N % 100) - 1) / 4;
-                 unsigned long  GS = ((M % 100) - 1) / 4;
+                     unsigned long GA = ((N % 100) - 1) / 4;
+                     unsigned long  GS = ((M % 100) - 1) / 4;
 
-                 if(GA == GS){
-                     printf("%.2f\n", V * 16);
-                 }else{
-                     printf("0.00");
+                     if(GA == GS){
+                            printf("%.2f\n", V * 16);
+                     }else{
+                            printf("0.00");
+                     }
                  }
-              }
         }while(1);
     return 0;
 }
