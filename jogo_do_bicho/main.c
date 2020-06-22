@@ -8,6 +8,8 @@ int main(){
         srand((unsigned long)time(NULL));
         M = rand() % 1000000;
 
+        printf("M: %lu", M);
+
         do{
               printf("Informe V e N: ");
               scanf("%f %lu ", &V, &N);
