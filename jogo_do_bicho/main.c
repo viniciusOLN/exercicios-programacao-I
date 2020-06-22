@@ -7,12 +7,12 @@ int main(){
         unsigned long N, M;
         srand((unsigned long)time(NULL));
         M = rand() % 1000000;
-       
+
         do{
               printf("Informe V e N: ");
               scanf("%f %lu ", &V, &N);
 
-              if(!(V + N + M)) break;
+              if(V + N == 0) break;
 
               if(N%10000 == M%1000){
                      printf("%.2f\n", V * 3000);
