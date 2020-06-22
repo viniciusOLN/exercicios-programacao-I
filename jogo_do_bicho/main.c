@@ -21,10 +21,14 @@ int main(){
               }else if(N%100 == M%100){
                      printf("%.2f\n", V * 50);
               } else{
-                     unsigned long GA = ((N % 100) - 1) / 4;
-                     unsigned long  GS = ((M % 100) - 1) / 4;
 
-                     if(GA == GS){
+                     N = N%100;
+                     M = M%100;
+
+                     N = (N==0) ?  (100 - 1)/4 :  (N - 1)/4;
+                     M = (N==0) ? (100 - 1)/4 :  (N - 1)/4;
+
+                     if(M == N){
                             printf("%.2f\n", V * 16);
                      }else{
                             printf("0.00");
