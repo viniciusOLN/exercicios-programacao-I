@@ -2,18 +2,18 @@
 
 int tabuada(int n, int end){
     int cont;
+    int result;
 
-    if(n%10 ==0){
+    if(end ==0){
         return 0;
     }else{
-        cont++;
-        printf("%i \n", n);
-
-         return n * tabuada(n, (end-1));
+        result = tabuada(n, (end-1)) * n;
+        printf("O resultado de %i multiplicado por %i e igual a : %i\n",n, end, result);
+        result = 0;
+         cont++;
     }
 
 }
-
 
 int main(){
 
