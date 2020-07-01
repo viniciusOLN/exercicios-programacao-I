@@ -8,6 +8,7 @@ int fatorial(int n){
             return 1;
         }else{
             fat = n * fatorial(n - 1);
+            printf("%i", n);
         }
 
     return fat;
