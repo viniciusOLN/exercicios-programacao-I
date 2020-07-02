@@ -1,8 +1,7 @@
 #include <stdio.h>
 
 int tabuada(int n, int end){
-    int cont;
-    int result;
+    int result = 0;
 
     if(end < 0){
         return 0;
@@ -10,8 +9,6 @@ int tabuada(int n, int end){
         tabuada(n, (end-1));
         result = n * end;
         printf("O resultado de %i multiplicado por %i e igual a : %i\n",n, end, result);
-        result = 0;
-         cont++;
     }
 }
 
