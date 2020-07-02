@@ -4,15 +4,15 @@ int tabuada(int n, int end){
     int cont;
     int result;
 
-    if(end ==0){
+    if(end < 0){
         return 0;
     }else{
-        result = tabuada(n, (end-1)) * n;
+        tabuada(n, (end-1));
+        result = n * end;
         printf("O resultado de %i multiplicado por %i e igual a : %i\n",n, end, result);
         result = 0;
          cont++;
     }
-
 }
 
 int main(){
