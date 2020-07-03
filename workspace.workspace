@@ -3,5 +3,6 @@
 	<Workspace title="Workspace">
 		<Project filename="../../projetos_c/jogo_de_botao/jogo_de_botao.cbp" />
 		<Project filename="recursividade/tabuada/tabuada.cbp" />
+		<Project filename="recursividade/fatorial/fatorial.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
