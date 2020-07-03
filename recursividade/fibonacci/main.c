@@ -2,16 +2,14 @@
 
 int fibonacci(int n){
 
-    int cont;
     int result;
 
-    if(cont == n){
-        return n;
-    }else{
-        cont++;
-      result =   n + fibonacci(n - 1);
-      printf("%i ", result);
-    }
+        if (n == 1 || n == 0){
+            return 1;
+        }else {
+             result = fibonacci(n - 1) + fibonacci(n - 2);
+            printf("%i ", n);
+        }
 
 }
 
