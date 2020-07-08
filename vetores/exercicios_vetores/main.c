@@ -2,10 +2,11 @@
 
 int main(){
 
-   int vet[10] = {0,1, 2, 3, 4, 5, 6, 7, 8, 9};
+   int vet[10];
 
-   for(int i = 0; i < 10; i++){
-        printf("%d ",vet[i]);
+   for(int i = 1; i < 10; i++){
+       printf("Digite o %i numero: ",i);
+        scanf("%i", &vet[i]);
    }
 
     return 0;
