@@ -26,19 +26,26 @@ void maior(int v[], int limit){
 }
 
 void troca(int vet[], int limit){
-    int n = 10;
+    int n = limit - 1;
     int aux;
 
     printf("antes da troca: \n");
+
     for(int i = 0; i < limit; i++){
         printf("v na posicao %i %d\n ", i, vet[i]);
     }
-    for(int i = 0; i < limit; i++){
+
+    printf("\n");
+
+    for(int i = 0; i < limit/2; i++){
         aux = vet[i];
         vet[i] = vet[n];
         vet[n] = aux;
         n = n - 1;
-        printf("v na posicao %i %d \n", i, vet[i]);
+    }
+
+    for(int i = 0; i < limit; i++){
+         printf("v na posicao %i %d \n", i, vet[i]);
     }
 }
 
