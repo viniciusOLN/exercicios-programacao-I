@@ -48,6 +48,18 @@ void troca(int vet[], int limit){
     }
 }
 
+void busca(int v[], int limit){
+    int m;
+    printf("\nDigite o valor que deseja procurar: \n");
+    scanf("%d", &m);
+
+    for(int i = 0; i < limit; i++){
+        if(v[i] == m){
+            printf(" \nvalor encontrado na posicao %i", i);
+        }
+    }
+}
+
 int main(){
 
    int vet[10];
@@ -56,6 +68,6 @@ int main(){
        mostrar(vet, limite);
        maior(vet, limite);
        troca(vet, limite);
-
+       busca(vet, limite);
     return 0;
 }
