@@ -30,7 +30,6 @@ void troca(int vet[], int limit){
     int aux;
 
     printf("antes da troca: \n");
-
     for(int i = 0; i < limit; i++){
         printf("v na posicao %i %d\n ", i, vet[i]);
     }
@@ -53,9 +52,10 @@ int main(){
 
    int vet[10];
 
-   carregar(vet, limite);
-   mostrar(vet, limite);
-   maior(vet, limite);
-   troca(vet, limite);
+       carregar(vet, limite);
+       mostrar(vet, limite);
+       maior(vet, limite);
+       troca(vet, limite);
+
     return 0;
 }
