@@ -6,5 +6,6 @@
 		<Project filename="recursividade/fatorial/fatorial.cbp" />
 		<Project filename="recursividade/fibonacci/fibonacci.cbp" />
 		<Project filename="recursividade/funcoes/funcoes.cbp" />
+		<Project filename="vetores/exercicios_vetores/exercicios_vetores.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
