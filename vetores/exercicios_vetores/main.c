@@ -60,6 +60,16 @@ void busca(int v[], int limit){
     }
 }
 
+void media(int v[], int limit){
+    int media = 0;
+
+    for(int i = 0; i < limit; i++){
+        media += v[i];
+    }
+
+    printf("\nA media entre os valores e de: %i ", (media/limit));
+}
+
 int main(){
 
    int vet[10];
@@ -69,5 +79,6 @@ int main(){
        maior(vet, limite);
        troca(vet, limite);
        busca(vet, limite);
+       media(vet, limite);
     return 0;
 }
