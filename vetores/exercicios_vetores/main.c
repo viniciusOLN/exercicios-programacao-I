@@ -73,12 +73,13 @@ void media(int v[], int limit){
 int main(){
 
    int vet[10];
-
-       carregar(vet, limite);
-       mostrar(vet, limite);
-       maior(vet, limite);
-       troca(vet, limite);
-       busca(vet, limite);
-       media(vet, limite);
+        do{
+               carregar(vet, limite);
+               mostrar(vet, limite);
+               maior(vet, limite);
+               troca(vet, limite);
+               busca(vet, limite);
+               media(vet, limite);
+           }while(1);
     return 0;
 }
