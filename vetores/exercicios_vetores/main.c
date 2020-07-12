@@ -70,6 +70,19 @@ void media(int v[], int limit){
     printf("\nA media entre os valores e de: %i ", (media/limit));
 }
 
+int multiplicar(int vet[], int limit){
+
+    int mult = 0;
+
+    printf("\nDigite o numero que deseja multiplicar por todos os valores da matriz: \n");
+    scanf("%i", &mult);
+
+    for(int i = 0; i < limit; i++){
+        vet[i] = vet[i] * mult;
+    }
+
+}
+
 int main(){
 
    int vet[10];
@@ -80,6 +93,8 @@ int main(){
                troca(vet, limite);
                busca(vet, limite);
                media(vet, limite);
+               multiplicar(vet, limite);
+               printf("\nmatriz dps de multiplicada\n");
            }while(1);
     return 0;
 }
