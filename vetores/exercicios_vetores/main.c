@@ -95,6 +95,7 @@ int main(){
                media(vet, limite);
                multiplicar(vet, limite);
                printf("\nmatriz dps de multiplicada\n");
+               mostrar(vet, limite);
            }while(1);
     return 0;
 }
