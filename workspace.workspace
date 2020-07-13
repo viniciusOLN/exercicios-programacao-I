@@ -8,5 +8,6 @@
 		<Project filename="recursividade/funcoes/funcoes.cbp" />
 		<Project filename="vetores/exercicios_vetores/exercicios_vetores.cbp" />
 		<Project filename="vetores/codigo_professor/codigo_professor.cbp" />
+		<Project filename="vetores/matrizes/matrizes.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
