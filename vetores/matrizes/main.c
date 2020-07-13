@@ -9,7 +9,7 @@ int main(){
     int m[LIN][COL];
 
     for(int i = 0; i < LIN; i++){
-        for(int j = 0; j< COL; j++){
+        for(int j = 0; j < COL; j++){
             printf("item [%d, %d]", i,j);
             scanf("%d",&m[i][j]);
         }
