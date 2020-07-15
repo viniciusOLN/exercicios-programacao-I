@@ -2,39 +2,49 @@
 #include <stdlib.h>
 #include <time.h>
 
+#define max 50
+
+int maiorIdade(int v[], int n){
+    int id = 0;
+
+    for(int i = 0; i < n; i++){
+        if(v[i] >= 18){
+            id++;
+        }
+    }
+    return id;
+}
+
+int menorIdade(int v[], int n){
+    int id = 0;
+
+    for(int i = 0; i < n; i++){
+        if(v[i] < 18){
+            id++;
+        }
+    }
+    return id;
+}
+
 int main(){
 
-    int idade[50], sexo[50];
-    int x = 0;
-    int y = 0;
-    int masc = 0;
-    int fem = 0;
-    int maior = 0;
-    int menor = 0;
+    int idade[max], sexo[max];
+    int x, quantIdade,menIdade = 0;
 
     srand((unsigned) time(NULL));
-    for(int i = 0; i < 20; i++){
-            x = rand();
-            y = rand() % 120;
 
-        if(x % 2== 0){
-            masc++;
-        }else {
-            fem++;
-        }
-
-        if(x >= 18){
-            maior++;
-        }else{
-            menor++;
-        }
-
+    for(int i = 0; i < max; i++){
+        x = rand();
+        idade[i] = x  % 120;
+        sexo[i] = x % 2;
     }
 
-    printf("A quantidade de mulheres e de : %i\n", fem);
-    printf("A quantidade de homens e de: %i\n",masc);
-    printf("A quantidade de maiores de idade: %i\n", maior);
-    printf("A quantidade de menores de idade:%i \n",menor);
+    quantIdade = maiorIdade(idade, max);
+    menIdade = menorIdade(idade, max);
+    for(int i = 0; i < max; i++){
+        printf("%d %d \t", sexo[i], idade[i]);
+            if((i + 1) % 10 ==0) printf("\n");
+    }
 
     return 0;
 }
