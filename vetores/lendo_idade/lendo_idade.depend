@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1594844952 source:c:\users\vinic\documents\myprojects\exercicios-programacao-i\vetores\lendo_idade\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+
