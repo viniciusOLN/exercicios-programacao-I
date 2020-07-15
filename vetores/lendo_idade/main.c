@@ -28,7 +28,7 @@ int menorIdade(int v[], int n){
 
 void contar_sexo(int s[], int n, int *m, int *f){
     for(int i = 0; i < n; i++){
-        if(s[i]  ==0){
+        if(s[i]  == 0){
             (*m)++;
         }else{
             (*f)++;
