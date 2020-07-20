@@ -11,7 +11,9 @@ int recursao(int n){
 
 int main(){
 
-    int n = 27;
+    int n = 0;
+    printf("Digite um numero");
+    scanf("%d", &n);
     printf("Recursao(%i): %i",n ,recursao(n));
 
     return 0;
