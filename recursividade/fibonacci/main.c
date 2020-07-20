@@ -9,9 +9,7 @@ int fibonacci(int n){
         }else {
              return fibonacci(n - 1) + fibonacci(n - 2);
         }
-
 }
-
 
 int main(){
 
@@ -20,7 +18,7 @@ int main(){
     printf("Digite o digito ate que voce deseja mostrar a sequencia de fibonacci");
     scanf("%i", &n);
 
-    fibonacci(n);
+    printf("numero(%i): %i",n ,fibonacci(n));
 
     return 0;
 }
