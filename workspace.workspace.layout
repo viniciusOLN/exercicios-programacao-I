@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_workspace_layout_file>
 	<FileVersion major="1" minor="0" />
-	<ActiveProject path="vetores/atividade_recursividade/atividade_recursividade.cbp" />
-	<PreferredTarget name="Debug" />
+	<ActiveProject path="vetores/ponteiros/ponteiros.cbp" />
 </CodeBlocks_workspace_layout_file>
