@@ -47,7 +47,7 @@ int main(){
        int *n = concatenaVet (v1,max,v2,max);
 
        for(int i = 0; i <10; i++){
-            printf("%p ", *n++);
+            printf("%d ", n++);
        }
 
 

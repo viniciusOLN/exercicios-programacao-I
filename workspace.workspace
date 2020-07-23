@@ -12,5 +12,6 @@
 		<Project filename="vetores/lendo_idade/lendo_idade.cbp" />
 		<Project filename="vetores/atividade_recursividade/atividade_recursividade.cbp" />
 		<Project filename="vetores/ponteiros/ponteiros.cbp" />
+		<Project filename="vetores/atividade_ponteiro/atividade_ponteiro.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
