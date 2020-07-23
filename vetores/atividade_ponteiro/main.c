@@ -3,17 +3,18 @@
 #include <stdlib.h>
 #define max 5
 
-int* concatenaVet (int v1[], int n1, int v2[], int n2){
+int* concatenaVet (int *v1[], int n1, int *v2[], int n2){
      int v3[n1 + n2];
      int *pt = &v3;
 
         for(int i = 0; i < n1; i++){
-            v3[i]= v1[i];
+           v3[i] = v1[i];
         }
 
-        pt = 5;
-        for(int i =5; i < n2; i++){
-            v3[i]= v2[i];
+        int j = 5;
+        for(int i =0; i < n2; i++){
+            v3[j] = v2[i];
+            j++;
         }
 
     return *pt;
@@ -21,6 +22,7 @@ int* concatenaVet (int v1[], int n1, int v2[], int n2){
 
 int main(){
     int v1[max], v2[max];
+    int v3[max + max];
 
     srand((unsigned) time(NULL));
         for(int i = 0; i < max; i++){
@@ -44,8 +46,8 @@ int main(){
         printf("\n\n");
        int *n = concatenaVet (v1,max,v2,max);
 
-       for(int i = 0; i < max+max; i++){
-        printf("%p ", n);
+       for(int i = 0; i <10; i++){
+            printf("%p ", *n++);
        }
 
 
