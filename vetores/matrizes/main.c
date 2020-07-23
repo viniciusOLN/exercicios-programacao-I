@@ -1,6 +1,6 @@
 #include <stdio.h>
-#define LIN 3
-#define COL 3
+#define LIN 4
+#define COL 4
 
 int main(){
 
