@@ -62,22 +62,51 @@ void carregar(int nota[], int jogador[], int limit){
     }
 }
 
+void ordenar(int k[],int v[], int limit){
+    int i, j, aux,aux2 = 0;
+
+    for(i = 0; i < max - 1; i++){
+        for(j = i +1; j< max; j++){
+            if(v[j] > v[i]){
+                aux = v[j];
+                v[j] = v[i];
+                v[i] = aux;
+
+                aux2 = k[j];
+                k[j] = k[i];
+                k[i] = aux2;
+            }
+        }
+    }
+}
+
 void maior_jogador(){
     int jogador[max], nota[max];
+
     carregar(nota,jogador,max);
+
     int maior = nota[0];
     int pos = 0;
+
     for(int i = 1; i < max; i++){
         if(nota[i] > maior){
             maior =nota[i];
             pos = i;
         }
     }
+
     printf("O %d jogador foi o maior com a nota de %d",jogador[pos],  maior);
+
+    ordenar(jogador,nota, max);
+
+    printf("\n");
+
+    for(int i = 0; i <3; i++){
+        printf("(%d lugar)O jogador %d teve nota de: %d\n", i+1, jogador[i], nota[i]);
+    }
 }
 
 int main(){
-
 
     //maior_valor();
     //fatorial();
