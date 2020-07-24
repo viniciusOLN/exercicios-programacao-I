@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #define max 5
 
-int* concatenaVet (int *v1[], int n1, int *v2[], int n2){
+int* concatenaVet (int v1[], int n1, int v2[], int n2){
      int v3[n1 + n2];
      int *pt = &v3;
 
@@ -44,12 +44,9 @@ int main(){
         }
 
         printf("\n\n");
-       int *n = concatenaVet (v1,max,v2,max);
+        int a = concatenaVet (v1,max,v2,max);
 
-       for(int i = 0; i <10; i++){
-            printf("%d ", n++);
-       }
-
+        printf("%d ", a);
 
     return 0;
 }

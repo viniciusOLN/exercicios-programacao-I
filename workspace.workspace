@@ -11,7 +11,7 @@
 		<Project filename="vetores/matrizes/matrizes.cbp" />
 		<Project filename="vetores/lendo_idade/lendo_idade.cbp" />
 		<Project filename="vetores/atividade_recursividade/atividade_recursividade.cbp" />
-		<Project filename="vetores/ponteiros/ponteiros.cbp" />
-		<Project filename="vetores/atividade_ponteiro/atividade_ponteiro.cbp" />
+		<Project filename="ponteiros/atividade_ponteiro/atividade_ponteiro.cbp" />
+		<Project filename="vetores/exercicios_vetores_v2/exercicio_vetores/exercicio_vetores.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
