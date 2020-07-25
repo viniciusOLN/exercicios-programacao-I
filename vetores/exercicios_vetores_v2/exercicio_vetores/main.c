@@ -202,8 +202,68 @@ void calculadora(){
     }
 }
 
+int maior(int v[], int m){
+    int maior = v[0];
+
+    for(int i = 0; i < m; i++){
+        if(v[i] > maior){
+            maior = v[i];
+        }
+    }
+    return maior;
+}
+
+int menor(int v[], int m){
+    int menor = v[0];
+
+    for(int i = 0; i < m; i++){
+        if(v[i] < menor){
+            menor = v[i];
+        }
+    }
+    return menor;
+}
+
+int media_v(int v[], int m){
+    int media = 0;
+
+        for(int i = 0; i < m; i++){
+            media = media + v[i];
+        }
+        media = media/m;
+
+    return media;
+}
+
+int encontrar(int v[], int m, int a){
+
+    int pos = -1;
+
+    for(int i = 0; i < m; i++){
+        if(a ==v[i]){
+            pos = i;
+            return pos;
+        }
+    }
+    return pos;
+}
+
+void multiplicar(int v[], int m, int mu){
+    for(int i = 0; i < m; i++){
+        v[i] = v[i] * mu;
+    }
+    mostrar(v,m,mu);
+}
+
+void mostrar(int v[], int m, int a){
+    printf("\nvalores multiplicados por: %d \n", a);
+    for(int i = 0; i < m; i++){
+        printf("%d ", v[i]);
+    }
+}
+
 void oito(){
-    int n = 0;
+    int n, menor_valor, maior_valor, media, valor,v, mult_valor, mult = 0;
     printf("Digite quantos itens deseja ");
     scanf("%d",&n);
     int m[n];
@@ -211,6 +271,26 @@ void oito(){
         printf("Digite o %d numero: ", i+1);
         scanf("%d",&m[i]);
     }
+
+    printf("Digite o numero que deseja encontrar: ");
+    scanf("%d",&v);
+
+    printf("Digite um numero a ser multiplicado pelo vetor: ");
+    scanf("%d", &mult);
+    valor = encontrar(m,n,v);
+    maior_valor = maior(m,n);
+    menor_valor = menor(m,n);
+    media = media_v(m,n);
+
+    printf("\nO maior valor e de: %d\n", maior_valor);
+    printf("O menor valor e de: %d\n", menor_valor);
+    printf("A media dos valores e de: %d \n", media);
+        if(valor > 0){
+                printf("Valor encontrado em %d ", valor + 1);
+        }else {
+            printf("Valor nao encontrado(-1)");
+        }
+    multiplicar(m,n,mult);
 }
 
 int main(){
@@ -230,7 +310,7 @@ int main(){
     // sétima questão
         //calculadora();
     //oitava questão
-        oito();
+        //oito();
 
 
     return 0;
