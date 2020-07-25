@@ -330,7 +330,6 @@ int recursiva(int b, int e){
     }else{
         return b * recursiva(b, e - 1);
     }
-
 }
 
 int main(){
