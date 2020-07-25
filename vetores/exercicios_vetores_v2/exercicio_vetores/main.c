@@ -105,11 +105,6 @@ void maior_jogador(){
             printf("(%d lugar)O jogador %d teve nota de: %d\n", i+1, jogador[i], nota[i]);
         }
 }
-void clear_keyboard_buffer(void){
-    int c = 0;
-    while ((c = getchar()) != '\n' && c != EOF) {}
-    return;
-}
 
 void par(){
     int c = 0;
@@ -119,8 +114,6 @@ void par(){
        getchar();
         if(c%2==0){
             printf("%d ", c);
-        }else{
-
         }
     }
 }
@@ -160,18 +153,22 @@ void impar_par(){
 
 void sub(int a, int b){
     printf("subtracao(%d - %d): %d ", a,b, (a - b));
+    calculadora();
 }
 
 void soma(int a, int b){
    printf("soma(%d + %d): %d ", a,b, (a+ b));
+   calculadora();
 }
 
 void multi(int a, int b){
    printf("multiplicacao(%d * %d): %d ", a,b, (a * b));
+   calculadora();
 }
 
 void divi(int a, int b){
    printf("divisao(%d / %d): %d ", a,b, (a /b));
+   calculadora();
 }
 
 void calculadora(){
@@ -205,6 +202,17 @@ void calculadora(){
     }
 }
 
+void oito(){
+    int n = 0;
+    printf("Digite quantos itens deseja ");
+    scanf("%d",&n);
+    int m[n];
+    for(int i = 0; i < n; i++){
+        printf("Digite o %d numero: ", i+1);
+        scanf("%d",&m[i]);
+    }
+}
+
 int main(){
 
     //primeira questão
@@ -222,7 +230,7 @@ int main(){
     // sétima questão
         //calculadora();
     //oitava questão
-
+        oito();
 
 
     return 0;
