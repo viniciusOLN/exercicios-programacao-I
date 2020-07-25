@@ -105,75 +105,125 @@ void maior_jogador(){
             printf("(%d lugar)O jogador %d teve nota de: %d\n", i+1, jogador[i], nota[i]);
         }
 }
+void clear_keyboard_buffer(void){
+    int c = 0;
+    while ((c = getchar()) != '\n' && c != EOF) {}
+    return;
+}
 
 void par(){
-    int i,j,ch = 0;
-    //printf("Digite um numero");
-    scanf("%d",&i);
-    //printf("Digite um numero");
-    //scanf("%d",&j);
+    int c = 0;
 
-        if(i%2==0){
-            printf("%d ", i);
-            scanf("%d", i);
-                if(i%2==0){
-                     printf("%d ", i);
-                    scanf("%d", i);
-                }else{
-                     scanf("%d", i);
-                     if(i%2==0){
-                        printf("%d ",i);
-                     }
-                }
+    for(int i = 0; i < 10; i++){
+       scanf(" %d%*[^\n]",&c);
+       getchar();
+        if(c%2==0){
+            printf("%d ", c);
         }else{
-            scanf("%d", i);
-                 if(i%2==0){
-                    printf("%d ",i);
-                 }
+
         }
-
-
-    //while((ch =getchar()) != '\n'  && ch !=EOF);
-/*if((i%2==0) && (j%2==0)){
-    printf("%d ", i);
-    printf("%d ", j);
-    scanf("%d",&i);
-    scanf("%d",&j);
+    }
 }
-    if(!(i%2==0)){
-        scanf("%d", &i);
-            if(!(i%2==0)){
-                scanf("%d", &i);
-            }else{
-                printf("%d ", i);
-            }
-    }else{
-        printf("%d ", i);
+
+void zero_nove(){
+    for(int i = 0; i < 9; i++){
+       if(i%2==0){
+            printf("%d  ", i);
+            printf("%d", i+ 1);
+       }
+        printf("\n");
+    }
+}
+
+void impar_par(){
+
+    int num[10];
+
+    for(int i = 0; i <=9; i++){
+        printf("Digite um numero ");
+        scanf("%d",&num[i]);
     }
 
-    if(!(j%2==0)){
-        scanf("%d", &j);
-        if(!(j%2==0)){
-            scanf("%d", &j);
-        }else{
-            printf("%d ", j);
+    printf("numeros pares: ");
+    for(int i = 0; i<= 9; i++){
+        if(num[i]%2==0){
+            printf("%d ", num[i]);
         }
-    }else{
-        printf("%d ", j);
-    }*/
+    }
+    printf("\nnumeros impares: ");
+    for(int i = 0; i<= 9; i++){
+        if(!(num[i]%2==0)){
+            printf("%d ", num[i]);
+        }
+    }
+}
 
+void sub(int a, int b){
+    printf("subtracao(%d - %d): %d ", a,b, (a - b));
+}
+
+void soma(int a, int b){
+   printf("soma(%d + %d): %d ", a,b, (a+ b));
+}
+
+void multi(int a, int b){
+   printf("multiplicacao(%d * %d): %d ", a,b, (a * b));
+}
+
+void divi(int a, int b){
+   printf("divisao(%d / %d): %d ", a,b, (a /b));
+}
+
+void calculadora(){
+
+    int n,m = 0;
+    char op;
+
+        printf("Digite um numero: ");
+        scanf("%d",&n);
+        printf("Digite o operador: ");
+        op = getch();
+        printf("\nDigite um numero: ");
+        scanf("%d",&m);
+
+    switch (op){
+     case '-':
+        sub(n,m);
+        break;
+     case '+':
+        soma(n,m);
+        break;
+     case '/':
+        divi(n,m);
+        break;
+     case '*':
+        multi(n,m);
+        break;
+     default:
+        printf("Digite uma operacao valida!\n");
+        calculadora();
+    }
 }
 
 int main(){
 
     //primeira questão
-    //maior_valor();
+        //maior_valor();
     //segunda questão
-    //fatorial();
+        //fatorial();
     //terceira questão
-    //maior_jogador();
+        //maior_jogador();
     //quarta questão
+        //par();
+    //quinta questão
+        //zero_nove();
+    //sexta questão
+        //impar_par();
+    // sétima questão
+        //calculadora();
+    //oitava questão
 
-    par();
+
+
     return 0;
 }
