@@ -293,6 +293,46 @@ void oito(){
     multiplicar(m,n,mult);
 }
 
+void sequencia(){
+
+    int x,y = 0;
+    printf("digite dois numeros");
+    scanf("%d %d", &x, &y);
+
+    if(x < y){
+        int m[ y - x];
+            for(int i = x; i <= y; i++){
+                m[i] = i;
+            }
+    }else{
+        int m[x - y];
+            for(int i =y; i <= x; i++ ){
+                m[i] = i;
+            }
+    }
+
+     if(x < y){
+        int m[ y - x];
+            for(int i = x; i <= y; i++){
+                printf("%d ", m[i] = i);
+            }
+    }else{
+        int m[x - y];
+            for(int i =y; i <= x; i++ ){
+                 printf("%d ", m[i] = i);
+            }
+    }
+}
+
+int recursiva(int b, int e){
+    if(b == 0 || e ==0){
+        return 1;
+    }else{
+        return b * recursiva(b, e - 1);
+    }
+
+}
+
 int main(){
 
     //primeira questão
@@ -311,6 +351,15 @@ int main(){
         //calculadora();
     //oitava questão
         //oito();
+    //nona questão
+        //sequencia();
+    //décima questão
+      int n,m = 0;
+        printf("digite o valor da base e o expoente respectivamente: ");
+        scanf("%d %d", &n, &m);
+
+        printf("%d", recursiva(n, m));
+
 
 
     return 0;
