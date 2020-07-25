@@ -334,32 +334,72 @@ int recursiva(int b, int e){
 
 int main(){
 
-    //primeira questão
-        //maior_valor();
-    //segunda questão
-        //fatorial();
-    //terceira questão
-        //maior_jogador();
-    //quarta questão
-        //par();
-    //quinta questão
-        //zero_nove();
-    //sexta questão
-        //impar_par();
-    // sétima questão
-        //calculadora();
-    //oitava questão
-        //oito();
-    //nona questão
-        //sequencia();
-    //décima questão
-      int n,m = 0;
-        printf("digite o valor da base e o expoente respectivamente: ");
-        scanf("%d %d", &n, &m);
+    int n = 0;
+     int a,m = 0;
 
-        printf("%d", recursiva(n, m));
+    do{
+        printf("1 - Primeira questao \t 2 - Segunda questao \t 3 - Terceira questao \t 4 - Quarta questao\t 5 - Quinta questao \n6 - Sexta questao \t 7 - Setima Questao \t 8 - Oitava Questao \t 9 - Nona questao \t 10 - Decima Questao \n0 - sair");
+        printf("\nDigite o numero da questao: ");
+        scanf("%d", &n);
 
+        switch(n){
 
+        case 1:
+        //primeira questão
+            maior_valor();
+            printf("\n\n");
+            break;
+        case 2:
+        //segunda questão
+            fatorial();
+            printf("\n\n");
+            break;
+        case 3:
+        //terceira questão
+            maior_jogador();
+            printf("\n\n");
+            break;
+        case 4:
+        //quarta questão
+            par();
+            printf("\n\n");
+            break;
+        case 5:
+        //quinta questão
+            zero_nove();
+            printf("\n\n");
+            break;
+        case 6:
+        //sexta questão
+            impar_par();
+            printf("\n\n");
+            break;
+        case 7:
+        // sétima questão
+            calculadora();
+            break;
+        case 8:
+        //oitava questão
+            oito();
+            break;
+        case 9:
+        //nona questão
+            sequencia();
+            printf("\n\n");
+            break;
+        case 10:
+            //décima questão
+                printf("digite o valor da base e o expoente respectivamente: ");
+                scanf("%d %d", &a, &m);
+
+                printf("%d", recursiva(a, m));
+                printf("\n\n");
+            break;
+        case 0:
+            return 1;
+        }
+
+    }while(1);
 
     return 0;
 }
