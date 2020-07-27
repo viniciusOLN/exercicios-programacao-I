@@ -25,7 +25,6 @@ int main(){
 
     int i = strlen(nome);
 
-
     printf("\nQuantidade de caracteres de %s: %d\n",nome,i);
 
     return 0;
