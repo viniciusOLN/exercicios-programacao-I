@@ -10,6 +10,8 @@
     1 - para uma string maior q a outra; st1 > st2
    -1 - para uma string menor q a outra: st1< st2
 */
+//strcmpi() - case sensitive, fazendo a mesma coisa da função acima
+//strcat(st1, st2) - função de concatenação, onde a primeira string recebe o conteúdo dela juntamente com o conteúdo da segunda string passada
 //strlen() - le o tamanho de uma string
 // for(i = 0; nome[i] !='\0'; i++);
 
