@@ -1,18 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 void carregar(int vf[], int vg[], int d[], int max){
 
     for(int i = 0; i < max; i++){
-
-        if(i == max){
-            vf[max] = 0;
-            vg[max] = 0;
-        }
-
         printf("Digite a velocidade do fugitivo, da guarda costas e a distancia respectivamente(%d): ", i+1);
         scanf("%d %d %d", &vf[i], &vg[i], &d[i]);
+        if(i == (max - 1)){
+            vf[max - 1] = 0;
+            vg[max - 1] = 0;
+        }
     }
 }
 
