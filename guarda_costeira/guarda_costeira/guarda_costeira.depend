@@ -1,6 +1,5 @@
 # depslib dependency file v1.0
-1596145771 source:c:\users\vinic\documents\myprojects\exercicios-programacao-i\guarda_costeira\guarda_costeira\main.c
+1596146259 source:c:\users\vinic\documents\myprojects\exercicios-programacao-i\guarda_costeira\guarda_costeira\main.c
 	<stdio.h>
-	<stdlib.h>
 	<math.h>
 
