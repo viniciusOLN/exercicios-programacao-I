@@ -1,20 +1,30 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <math.h>
+#define milha 12
 
-void carregar(float vf[], float vg[], float d[], int max){
-    int a = 0;
+void carregar(float vf[], float vg[], float d[], int *max){
     for(int i = 0; i < max; i++){
-        printf("Digite a velocidade do fugitivo, da guarda costas e a distancia respectivamente(%d): ", i+1);
-        scanf("%f %f %f", &vf[i], &vg[i], &d[i]);
+        printf("Digite a distancia velocidade do fugitivo e velocidade do guarda respectivamente(%d): ", i+1);
+        scanf("%f %f %f", &d[i], &vf[i], &vg[i]);
+        if(vf[i] == 0 && vg[i] == 0 && d[i] == 0){
+            *max = i;
+            break;
+        }
     }
+}
 
+void operacao(float vf[], float vg[], float d[], int max){
     for(int i = 0; i < max; i++){
-        vf[i] = ((12 - d[i])/vf[i]);
-        vg[i] = 12 - vg[i];
+        int dis = 0;
+        dis = sqrt (pow(d[i], 2) + pow(milha,2));
+        vf[i]= milha / vf[i];
+        vg[i] = dis / vg[i];
     }
+}
 
+void mostrar(float vf[], float vg[], int max){
     for(int i = 0; i < max; i++){
-       if(vg[i] >= vf[i]){
+       if(vg[i] <= vf[i]){
             printf("s ");
        }else{
             printf("n ");
@@ -24,15 +34,15 @@ void carregar(float vf[], float vg[], float d[], int max){
 
 int main(){
 
-    int max = 0;
-    printf("quantidade de valores ");
-    scanf("%d", &max);
+    int max = 100000;
     float vf[max];
     float vg[max];
     float d[max];
     char result[max];
 
-    carregar(vf, vg, d, max);
+    carregar(vf, vg, d, &max);
+    operacao(vf, vg, d, max);
+    mostrar(vf, vg, max);
 
     return 0;
 }
