@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include <time.h>
-#include <stdlib.h>
 #define max 5
 
-int* concatenaVet (int v1[], int n1, int v2[], int n2){
-     int v3[n1 + n2];
-     int *pt = &v3;
+int* concatenaVet (int v1[], int n1, int v2[], int n2, int v3[]){
+        v3[n1 + n2];
 
         for(int i = 0; i < n1; i++){
            v3[i] = v1[i];
@@ -17,36 +15,42 @@ int* concatenaVet (int v1[], int n1, int v2[], int n2){
             j++;
         }
 
-    return *pt;
+    return v3;
+}
+
+void carregar(int v[], int m){
+    for(int i = 0; i < max; i++){
+        v[i] = rand() % 101;
+    }
+}
+
+int mostrar(int v[], int m){
+    for(int i = 0; i < m; i++){
+            printf("%d ", v[i]);
+        }
 }
 
 int main(){
     int v1[max], v2[max];
     int v3[max + max];
+    int *pt = &v3;
 
     srand((unsigned) time(NULL));
-        for(int i = 0; i < max; i++){
-            v1[i] = rand() % 101;
-        }
-
-        for(int i = 0; i < max; i++){
-            v2[i] = rand() % 101;
-        }
+       carregar(v1, max);
+       carregar(v2, max);
 
         printf("vetor 1: \n");
-        for(int i = 0; i < max; i++){
-            printf("%d ", v1[i]);
-        }
+        mostrar(v1, max);
 
         printf("\nvetor 2: \n");
-        for(int i = 0; i < max; i++){
-            printf("%d ", v2[i]);
-        }
+        mostrar(v2, max);
 
         printf("\n\n");
-        int a = concatenaVet (v1,max,v2,max);
+        pt = concatenaVet (v1,max,v2,max,v3);
 
-        printf("%d ", a);
-
+        printf("vetor 3: ");
+        for(int i = 0; i < max*2; i++){
+             printf("%d ", *(pt + i));
+        }
     return 0;
 }
