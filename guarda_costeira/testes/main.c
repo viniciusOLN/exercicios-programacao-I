@@ -4,7 +4,7 @@
 
 int main(){
 
-    int D, Vf, Vg;
+    /*int D, Vf, Vg;
     while (scanf ("%d %d %d", &D, &Vf, &Vg)>0) {
          float S, Tg, Tf;
          S = sqrt (pow(D, 2) + 144);
@@ -14,7 +14,15 @@ int main(){
          printf("%f ", Tg);
          if (Tg <= Tf) printf("S\n");
          else printf ("N\n");
-    }
+    }*/
+
+    int i = 0;
+        i++;
+    printf("%d ", i);
+
+    i = 0;
+    ++i;
+    printf("%d", i);
 
     return 0;
 }
