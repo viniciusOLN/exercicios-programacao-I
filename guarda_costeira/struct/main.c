@@ -33,6 +33,20 @@ typedef struct{
     float saldo;
 } ContaBanco;
 
+struct Data{
+    int dia;
+    int mes;
+    int ano;
+};
+
+struct Produto{
+    int codigo;
+    char nome[30];
+    float preco;
+    float estoque;
+    struct Data dataVal;
+};
+
 int main(){
 
     /*struct Conta c1;
@@ -48,17 +62,21 @@ int main(){
      ContaBanco conta[max];
 
      for(int i = 0; i < max; i++){
-        printf("Digite o numero da conta: ");
-        scanf("%d", &conta[i].numero);
-        printf("\n Digite o saldo da conta: ");
-        scanf("%f", &conta[i].saldo);
+        printf("Digite o numero e o saldo: ");
+        scanf("%d %f", &conta[i].numero, &conta[i].saldo);
      }
 
      for(int i = 0; i < max; i++){
-        printf("conta %d: \n", i + 1);
+        printf("conta %d:  ", i + 1);
         printf("Numero da conta: %d", conta[i].numero);
-        printf(" Saldo da conta: %f\n", conta[i].saldo);
+        printf(" Saldo da conta: %.2f\n", conta[i].saldo);
      }
+
+     struct Produto p;
+     p.dataVal.ano = 2020;
+     p.dataVal.dia = 02;
+     p.dataVal.mes = 05;
+
 
     return 0;
 }

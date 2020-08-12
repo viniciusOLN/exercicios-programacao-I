@@ -16,5 +16,6 @@
 		<Project filename="vetores/exercicios_vetores_v2/strings/strings.cbp" />
 		<Project filename="guarda_costeira/guarda_costeira/guarda_costeira.cbp" />
 		<Project filename="guarda_costeira/testes/testes.cbp" />
+		<Project filename="guarda_costeira/struct/struct.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
