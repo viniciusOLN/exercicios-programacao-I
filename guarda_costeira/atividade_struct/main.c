@@ -1,0 +1,127 @@
+#include <stdio.h>
+
+#define MAX 5
+
+typedef struct {
+	int num;
+	float saldo;
+} Conta;
+
+typedef struct {
+	Conta vconta[MAX];
+	int indice;
+} TConta;
+
+void mostrarTodas(TConta c) {
+	puts("");
+	puts("===========================");
+	puts("=== Relatório de Contas ===");
+	for(int i = 0; i < c.indice; i++) {
+		printf("Numero: %d", c.vconta[i].num);
+		printf("\nSaldo.: %.2f\n", c.vconta[i].saldo);
+		puts("===========================");
+	}
+}
+
+void mostrarSaldo(TConta c, int numero) {
+	for(int i = 0; i < c.indice; i++) {
+		if (c.vconta[i].num == numero) {
+			puts("");
+			puts("======================");
+			puts("=== Saldo de Conta ===");
+			printf("Numero: %d", c.vconta[i].num);
+			printf("\nSaldo.: %.2f\n", c.vconta[i].saldo);
+			puts("======================");
+			break;
+		}
+	}
+}
+
+void creditar(TConta *conta, Conta c) {
+	for(int i = 0; i < conta->indice; i++)
+		if (conta->vconta[i].num == c.num)
+			conta->vconta[i].saldo += c.saldo;
+}
+
+void debitar(TConta *conta, Conta c) {
+	for(int i = 0; i < conta->indice; i++)
+		if (conta->vconta[i].num == c.num)
+			conta->vconta[i].saldo -= c.saldo;
+}
+
+Conta lerConta() {
+	Conta c;
+	printf("Informe o numero: ");
+	scanf("%d", &c.num);
+	printf("Informe o saldo.: ");
+	scanf("%f", &c.saldo);
+
+	return c;
+}
+
+int main () {
+	TConta conta; // (Conta[], indice)
+	Conta c, c2;
+	conta.indice = 0;
+	short opcao = 0;
+	int numero, destino;
+	float valor;
+
+	do{
+		puts("");
+		puts("====================================================");
+		puts("=========== Controle de Contas Bancarias ===========");
+		puts("1. Cadastrar Conta	            2. Mostrar Saldo");
+		puts("3. Credito em Conta	            4. Debito da Conta");
+		puts("5. Transferencia entre Contas     6. Mostrar Todas");
+		puts("0. Sair");
+		printf("Informe sua opcao: ");
+		scanf("%d", &opcao);
+
+		switch (opcao) {
+			case 1:
+				if(conta.indice < MAX)
+					conta.vconta[conta.indice++] = lerConta();
+				break;
+			case 2:
+				printf("Informe o numero: ");
+				scanf("%d", &numero);
+				mostrarSaldo(conta, numero);
+				break;
+			case 3:
+				printf("Informe o numero: ");
+				scanf("%d", &c.num);
+				printf("Informe o valor deposito: ");
+				scanf("%f", &c.saldo);
+				creditar(&conta, c);
+				break;
+			case 4:
+				printf("Informe o numero: ");
+				scanf("%d", &c.num);
+				printf("Informe o valor do saque: ");
+				scanf("%f", &c.saldo);
+				debitar(&conta, c);
+				break;
+			case 5:
+				printf("Informe a conta de origem...: ");
+				scanf("%d", &c.num);
+				printf("Informe o valor a transferir: ");
+				scanf("%f", &c.saldo);
+				debitar(&conta, c);
+				printf("Informe a conta de destino..: ");
+				scanf("%d", &c.num);
+				creditar(&conta, c);
+				break;
+			case 6:
+				mostrarTodas(conta);
+				break;
+			case 0:
+				break;
+			default:
+				puts("\nOpcao invalida!!");
+		}
+
+	}while(opcao > 0);
+
+	return 0;
+}
