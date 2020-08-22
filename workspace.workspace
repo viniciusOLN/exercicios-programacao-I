@@ -17,5 +17,6 @@
 		<Project filename="guarda_costeira/guarda_costeira/guarda_costeira.cbp" />
 		<Project filename="guarda_costeira/testes/testes.cbp" />
 		<Project filename="guarda_costeira/struct/struct.cbp" />
+		<Project filename="guarda_costeira/atividade_struct/atividade_struct.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

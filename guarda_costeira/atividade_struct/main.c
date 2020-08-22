@@ -49,6 +49,32 @@ void debitar(TConta *conta, Conta c) {
 			conta->vconta[i].saldo -= c.saldo;
 }
 
+void deletarConta(TConta *conta, Conta c){
+    for(int i = 0; i < conta -> indice; i++){
+        if(conta->vconta[i].num == c.num){
+            conta->vconta[i].num = 0;
+            conta->vconta[i].saldo = 0;
+        }
+    }
+
+    int aux = 0;
+    int auxNum = 0;
+
+    for(int i = 0; i < conta->indice; i++){
+        for(int j = 0; j < (conta->indice - i); j++){
+            if(conta->vconta[j].saldo < conta->vconta[j + 1].saldo){
+                aux = conta->vconta[j].saldo;
+                conta->vconta[j].saldo = conta->vconta[j + 1].saldo;
+                conta->vconta[j + 1].saldo = aux;
+                auxNum = conta->vconta[j].num;
+                conta->vconta[j].num = conta->vconta[j + 1].num;
+                conta->vconta[j + 1].num = auxNum;
+            }
+        }
+    }
+    conta->indice = conta->indice - 1;
+}
+
 Conta lerConta() {
 	Conta c;
 	printf("Informe o numero: ");
@@ -74,6 +100,7 @@ int main () {
 		puts("1. Cadastrar Conta	            2. Mostrar Saldo");
 		puts("3. Credito em Conta	            4. Debito da Conta");
 		puts("5. Transferencia entre Contas     6. Mostrar Todas");
+		puts("7 . Apagar uma conta");
 		puts("0. Sair");
 		printf("Informe sua opcao: ");
 		scanf("%d", &opcao);
@@ -115,6 +142,12 @@ int main () {
 			case 6:
 				mostrarTodas(conta);
 				break;
+            case 7:
+                printf("Informe o numero da conta que deseja apagar: ");
+                scanf("%d", &c.num);
+                deletarConta(&conta, c);
+                printf("\nConta deletada com sucesso!");
+                break;
 			case 0:
 				break;
 			default:
