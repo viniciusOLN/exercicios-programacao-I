@@ -49,8 +49,8 @@ void debitar(TConta *conta, Conta c) {
 			conta->vconta[i].saldo -= c.saldo;
 }
 
-void deletarConta(TConta *conta, Conta c){
-    for(int i = 0; i < conta -> indice; i++){
+void deletarConta(TConta *conta, int deletar){
+    /*for(int i = 0; i < conta -> indice; i++){
         if(conta->vconta[i].num == c.num){
             conta->vconta[i].num = 0;
             conta->vconta[i].saldo = 0;
@@ -72,7 +72,17 @@ void deletarConta(TConta *conta, Conta c){
             }
         }
     }
-    conta->indice = conta->indice - 1;
+    conta->indice = conta->indice - 1;*/
+
+    for(int i = 0; i < conta->indice; i++){
+        if(deletar == conta->vconta[i].num){
+            conta->vconta[i] = conta->vconta[conta->indice - 1];
+            conta->indice--;
+            break;
+        }
+    }
+
+
 }
 
 Conta lerConta() {
@@ -90,7 +100,7 @@ int main () {
 	Conta c, c2;
 	conta.indice = 0;
 	short opcao = 0;
-	int numero, destino;
+	int numero, destino, deletar;
 	float valor;
 
 	do{
@@ -144,8 +154,8 @@ int main () {
 				break;
             case 7:
                 printf("Informe o numero da conta que deseja apagar: ");
-                scanf("%d", &c.num);
-                deletarConta(&conta, c);
+                scanf("%d", &deletar);
+                deletarConta(&conta, deletar);
                 printf("\nConta deletada com sucesso!");
                 break;
 			case 0:
