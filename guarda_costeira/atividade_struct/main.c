@@ -50,30 +50,6 @@ void debitar(TConta *conta, Conta c) {
 }
 
 void deletarConta(TConta *conta, int deletar){
-    /*for(int i = 0; i < conta -> indice; i++){
-        if(conta->vconta[i].num == c.num){
-            conta->vconta[i].num = 0;
-            conta->vconta[i].saldo = 0;
-        }
-    }
-
-    int aux = 0;
-    int auxNum = 0;
-
-    for(int i = 0; i < conta->indice; i++){
-        for(int j = 0; j < (conta->indice - i); j++){
-            if(conta->vconta[j].saldo < conta->vconta[j + 1].saldo){
-                aux = conta->vconta[j].saldo;
-                conta->vconta[j].saldo = conta->vconta[j + 1].saldo;
-                conta->vconta[j + 1].saldo = aux;
-                auxNum = conta->vconta[j].num;
-                conta->vconta[j].num = conta->vconta[j + 1].num;
-                conta->vconta[j + 1].num = auxNum;
-            }
-        }
-    }
-    conta->indice = conta->indice - 1;*/
-
     for(int i = 0; i < conta->indice; i++){
         if(deletar == conta->vconta[i].num){
             conta->vconta[i] = conta->vconta[conta->indice - 1];
@@ -81,8 +57,6 @@ void deletarConta(TConta *conta, int deletar){
             break;
         }
     }
-
-
 }
 
 Conta lerConta() {
