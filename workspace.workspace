@@ -20,5 +20,6 @@
 		<Project filename="guarda_costeira/atividade_struct/atividade_struct.cbp" />
 		<Project filename="guarda_costeira/alocacao_dinamica/alocacao_dinamica.cbp" />
 		<Project filename="guarda_costeira/par_impar_arrays/par_impar_arrays.cbp" />
+		<Project filename="guarda_costeira/conta_bancaria_codigo_prof-sequencial/conta_bancaria_codigo_prof-sequencial.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
