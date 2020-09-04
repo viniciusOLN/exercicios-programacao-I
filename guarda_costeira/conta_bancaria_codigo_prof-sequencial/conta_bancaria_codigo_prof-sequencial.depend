@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1599181019 source:c:\users\vinic\documents\myprojects\exercicios-programacao-i\guarda_costeira\conta_bancaria_codigo_prof-sequencial\main.c
+	<stdio.h>
+	<stdlib.h>
+
