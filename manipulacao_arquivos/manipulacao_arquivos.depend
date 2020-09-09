@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1599686189 source:c:\users\vinic\documents\myprojects\exercicios-programacao-i\manipulacao_arquivos\main.c
+	<stdio.h>
+	<stdlib.h>
+

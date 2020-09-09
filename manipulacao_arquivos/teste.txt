@@ -1,1 +1,2 @@
 Hello World!
+Olá, esta é minha primeira aula de manipulação de arquivos em C!
