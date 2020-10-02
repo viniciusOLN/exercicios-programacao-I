@@ -18,5 +18,7 @@ int main(){
             printf("%c", ch);
        }while(ch !=EOF);
    }
+
+   fclose(fp);
     return 0;
 }
