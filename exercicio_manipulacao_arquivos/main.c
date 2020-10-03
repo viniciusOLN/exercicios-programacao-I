@@ -4,7 +4,6 @@
 
 int main(){
     char in[50];
-    char ou[50];
     char frase[30];
     char aux;
     FILE *fp = NULL;
@@ -13,7 +12,7 @@ int main(){
      setlocale(LC_ALL, "Portuguese");
 
     printf("Digite o nome do arquivo de entrada: ");
-    scanf("%s", &in);
+    scanf("%s", in);
     strcat(in, ".txt");
 
     if(fp = fopen(in, "r")){
@@ -29,16 +28,13 @@ int main(){
         printf("Arquivo não encontrado!");
     }
 
-    printf("\n\n%s\n\n", frase);
+    in[50] = NULL;
+    printf("\nDigite o nome do arquivo e saida: ");
+    scanf("%s", in);
+    strcat(in, ".txt");
 
-    /*printf("Digite o nome do arquivo e saida: ");
-    scanf("%s", &ou);
-    strcat(ou, ".txt");
-
-    printf("\n\n%s\n\n", frase);*/
-
-    if(fpo = fopen("saida.txt", "w")){
-        printf("\nArquivo de saida criado!");
+    if(fpo = fopen(in, "w")){
+        printf("\nArquivo de saida criado!\n");
         int tamanho = strlen(frase);
 
         for(int i = 0; i < tamanho/2; i++){
@@ -48,13 +44,11 @@ int main(){
         }
         fwrite(frase, sizeof(char), tamanho, fpo);
         fclose(fpo);
+        printf("\n Itens no arquivo de saida: \n");
+        printf("%s\n\n", frase);
 
     }else{
         printf("\n\n erro ao criar o arquivo de saida!");
     }
-
-
-
-    printf(" %s ", frase);
     return 0;
 }
