@@ -4,7 +4,7 @@
 
 int main(){
     char in[50];
-    char frase[30];
+    char frase[90];
     char aux;
     FILE *fp = NULL;
     FILE *fpo = NULL;
@@ -20,12 +20,12 @@ int main(){
 
         printf("\n\nO arquivo de entrada tem os seguintes itens: ");
 
-       while(fread(frase, sizeof(frase), 30, fp)){
+       while(fread(frase, sizeof(char), 90, fp)){
             printf("\n%s \n", frase);
        }
         fclose(fp);
     }else{
-        printf("Arquivo n„o encontrado!");
+        printf("Arquivo n√£o encontrado!");
     }
 
     in[50] = NULL;
